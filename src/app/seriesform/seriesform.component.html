@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>TV Series Data</h2>
+    <form role="form" [formGroup]="seriesForm" class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-1" for="inputEmail1">Series Name</label>
+        <div class="col-sm-5"><input type="text" class="form-control"  formControlName="name"></div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-1" for="inputPassword1">Genre</label>
+        <div class="col-sm-5"><input type="text" class="form-control"  formControlName="genre"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-3"><label>Season</label><input type="text" class="form-control" formControlName="season"></div>
+        <div class="col-sm-3"><label>Episode</label><input type="text" class="form-control" formControlName="episode"></div>
+      </div>
+      <div class="form-group">
+          <label class="col-sm-12" for="TextArea">Description</label>
+          <div class="col-sm-6"><textarea class="form-control"  formControlName="textarea"></textarea></div>
+        </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <button type="submit" class="btn btn-info pull-right">Add Episode</button>
+        </div>
+      </div>
+    </form>
+    <hr>
+  </div>

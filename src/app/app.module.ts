@@ -10,7 +10,14 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
-
+import { AppService } from './app.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MovieComponent } from './movie/movie.component';
+import { SeriesComponent } from './series/series.component';
+import { MovieformComponent } from './movieform/movieform.component';
+import { SeriesformComponent } from './seriesform/seriesform.component';
+// import {PopupModule} from 'ng2-opd-popup';
+// import { AuthGuard } from './auth-gaurd';
 
 @NgModule({
   declarations: [
@@ -19,15 +26,21 @@ import { LoginComponent } from './login/login.component';
     FooterComponent,
     LandingComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    MovieComponent,
+    SeriesComponent,
+    MovieformComponent,
+    SeriesformComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    // PopupModule.forRoot()
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,7 +10,23 @@ router.route('/users')
 router.route('/userLogin')
 .post(userController.loginUser);
 
+router.route('/movies')
+.get(userController.getMovie)
+.post(userController.postMovie);
 
+router.route('/movies/:id')
+.put(userController.updateMovie)
+.delete(userController.deleteMovie);
+
+router.route('/series')
+.get(userController.getSeries)
+.post(userController.postSeries);
+
+router.route('/series/:id')
+.delete(userController.deleteSeries);
+
+// router.route('/seriesdelete')
+// .delete(userController.deleteSeries);
 
 
 module.exports = router;

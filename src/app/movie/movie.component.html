@@ -1,0 +1,57 @@
+
+<div class="container list">    
+  <div class="row">
+    <div class="col-sm-3 " *ngFor="let m of movies">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{m.name}}</div>
+        <div class="panel-body"><img src="{{m._url}}" class="img-responsive" style="width:250px;height:350px" ></div>
+        <div class="panel-footer">{{m.genre}}</div>
+        <div class="panel">{{m.description}}</div>
+        <div *ngIf="adminlogin()">
+            <button class="btn btn-info" data-toggle="modal" data-target="#myModal" >Update</button> 
+            <button class="btn btn-info" (click)="deleteMovie(m._id)">Delete</button>  
+        </div>
+      </div><br>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h5>Update Movie</h5>
+          </div>
+          <div class="modal-body">
+            <label>Name</label>
+            <input type="text" id="name" #name> 
+          </div>
+          <div>
+            <label>Genre</label>
+            <input type="text" id="genre" #genre>
+          </div>
+          <div>
+            <label>Description</label>
+            <input type="text" id="description" #description>
+          </div>
+          <div>
+            <label>ImageURL</label>
+            <input type="text" id="image" #image>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" >Update Movie </button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  

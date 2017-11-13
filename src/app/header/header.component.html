@@ -1,12 +1,23 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" id="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" routerLink='landing'>VideoStream</a>
+        <a class="navbar-brand" routerLink="landing">VideoStream</a>
+        <a class="navbar-brand" routerLink="movies">Movies</a>
+        <a class="navbar-brand" routerLink="series">TV Series</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-          <li><a   routerLink='/login'><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-          <li><a routerLink='/signup'><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>          
+          <li class="dropdown" *ngIf="adminlogin()">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a routerLink="/movieform">Movie Settings</a></li>
+                  <li><a routerLink="/seriesform">Series Settings</a></li>
+              </ul>
+          </li>
+          <li><a *ngIf="!checklogin()" routerLink='/login'><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+          <li><a *ngIf="!checklogin()" routerLink='/signup'><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>  
+          <li><a *ngIf="checklogin()" (click)="onLogout()"  routerLink="/login"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>        
         </ul>
     </div>
-  </nav>
+  </nav> 
   
