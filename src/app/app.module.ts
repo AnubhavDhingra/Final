@@ -16,6 +16,10 @@ import { MovieComponent } from './movie/movie.component';
 import { SeriesComponent } from './series/series.component';
 import { MovieformComponent } from './movieform/movieform.component';
 import { SeriesformComponent } from './seriesform/seriesform.component';
+import { SeasonsComponent } from './seasons/seasons.component';
+import { EpisodeComponent } from './episode/episode.component';
+import { EpisodeFormComponent } from './episode-form/episode-form.component';
+import { SeasonFormComponent } from './season-form/season-form.component';
 // import {PopupModule} from 'ng2-opd-popup';
 // import { AuthGuard } from './auth-gaurd';
 
@@ -31,7 +35,11 @@ import { SeriesformComponent } from './seriesform/seriesform.component';
     MovieComponent,
     SeriesComponent,
     MovieformComponent,
-    SeriesformComponent
+    SeriesformComponent,
+    SeasonsComponent,
+    EpisodeComponent,
+    EpisodeFormComponent,
+    SeasonFormComponent
   ],
   imports: [
     BrowserModule,

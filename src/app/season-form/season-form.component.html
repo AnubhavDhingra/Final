@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Season Data</h2>
+  <form [formGroup]="seasonForm" (ngSubmit)="onSubmit()"  class="form-horizontal">
+      <div class="form-group">
+           <label class="col-sm-1" >Series ID</label>
+           <div class="col-sm-5"><input type="text" class="form-control" formControlName="sid"></div>
+      </div>
+      
+      <div class="form-group">
+          <label class="col-sm-1">Season Number</label>
+          <div class="col-sm-5"><input type="text" class="form-control" formControlName="seasonNumber"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-1">Season Name</label>
+        <div class="col-sm-5"><input type="text" class="form-control" formControlName="seasonName"></div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-10">Description</label>
+        <div class="col-sm-6"><textarea class="form-control"  formControlName="description"></textarea></div>
+      </div>
+    
+    <button type="submit" class="btn btn-info pull-right">Add Season </button>
+  </form>
+</div>

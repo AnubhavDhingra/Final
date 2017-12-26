@@ -3,6 +3,9 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cor = require('cors');
+var fs = require('fs');
+var multer = require('multer');
+// var verifyToken = require('./Middlewares/verifyToken');
 
 // Connect to the MongoDB
 mongoose.connect('mongodb://localhost:27017/FinalMean');

@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
   onLogout() {
     localStorage.setItem('loggedIn', 'false');
     localStorage.setItem('token', '1' );
+    localStorage.removeItem('jwt');
     // console.log(localStorage.getItem('token'));
   }
   adminlogin() {

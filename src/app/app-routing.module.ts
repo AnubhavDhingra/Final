@@ -8,6 +8,10 @@ import { SeriesComponent } from './series/series.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieformComponent } from './movieform/movieform.component';
 import { SeriesformComponent } from './seriesform/seriesform.component';
+import { SeasonsComponent } from './seasons/seasons.component';
+import { EpisodeComponent } from './episode/episode.component';
+import { SeasonFormComponent } from './season-form/season-form.component';
+import { EpisodeFormComponent } from './episode-form/episode-form.component';
 //  import { AuthGuard } from './auth-gaurd';
 
 
@@ -20,7 +24,11 @@ const routes: Routes = [
     {path: 'movies', component: MovieComponent},
     {path: 'series', component: SeriesComponent},
     {path: 'movieform', component: MovieformComponent},
-    {path: 'seriesform', component: SeriesformComponent}
+    {path: 'seriesform', component: SeriesformComponent},
+    {path: 'season/:value', component: SeasonsComponent},
+    {path: 'episode/:sid/:snumber', component: EpisodeComponent},
+    {path: 'seasonform', component: SeasonFormComponent},
+    {path: 'episodeform', component: EpisodeFormComponent},
 ];
 
 @NgModule({

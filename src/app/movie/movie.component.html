@@ -8,7 +8,7 @@
         <div class="panel-footer">{{m.genre}}</div>
         <div class="panel">{{m.description}}</div>
         <div *ngIf="adminlogin()">
-            <button class="btn btn-info" data-toggle="modal" data-target="#myModal" >Update</button> 
+            <button class="btn btn-info" data-toggle="modal" data-target="#myModal" (click)="movieID(m._id)">Update</button> 
             <button class="btn btn-info" (click)="deleteMovie(m._id)">Delete</button>  
         </div>
       </div><br>
@@ -17,41 +17,39 @@
 </div>
 
 
-
 <div class="container">
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
-      
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h5>Update Movie</h5>
           </div>
-          <div class="modal-body">
+          <form [formGroup]="updateForm" (ngSubmit)="updateMovie()">
+          <div class="form-group">
             <label>Name</label>
-            <input type="text" id="name" #name> 
+            <input type="text" id="name" #name  formControlName="name"> 
           </div>
-          <div>
+          <div  class="form-group">
             <label>Genre</label>
-            <input type="text" id="genre" #genre>
+            <input type="text" id="genre" #genre  formControlName="genre">
           </div>
-          <div>
+          <div  class="form-group">
             <label>Description</label>
-            <input type="text" id="description" #description>
+            <input type="text" id="description" #description  formControlName="description">
           </div>
-          <div>
+          <div  class="form-group">
             <label>ImageURL</label>
-            <input type="text" id="image" #image>
+            <input type="text" id="image" #image  formControlName="image">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" >Update Movie </button>
+            <button type="submit" class="btn btn-default" >Update Movie </button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
+        </form>
         </div>
-        
       </div>
     </div>
-    
   </div>
   

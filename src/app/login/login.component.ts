@@ -25,13 +25,18 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.response.role);
       localStorage.setItem('loggedIn', 'true');  // for hiding login
       console.log(localStorage.getItem('loggedIn'));
+      localStorage.setItem('jwt', data.token);
+      console.log(localStorage.getItem('jwt'));
       //  this.userService.token = true;
        this.router.navigate(['/dashboard']);
     } else { // this.router.navigate(['/'])}
     console.log('failed');
  }}
  );
+
 }
+
+
  // this.userService.loginUser(this.loginForm.value).subscribe(data => {};
 }
 

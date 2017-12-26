@@ -1,21 +1,20 @@
 <div class="container">
   <h2>TV Series Data</h2>
-    <form role="form" [formGroup]="seriesForm" class="form-horizontal">
+    <form role="form" [formGroup]="seriesForm" (ngSubmit)="onSubmit()" class="form-horizontal">
       <div class="form-group">
-        <label class="col-sm-1" for="inputEmail1">Series Name</label>
+        <label class="col-sm-1" >Series Name</label>
         <div class="col-sm-5"><input type="text" class="form-control"  formControlName="name"></div>
       </div>
       <div class="form-group">
-        <label class="col-sm-1" for="inputPassword1">Genre</label>
+        <label class="col-sm-1" >Genre</label>
         <div class="col-sm-5"><input type="text" class="form-control"  formControlName="genre"></div>
       </div>
       <div class="form-group">
-        <div class="col-sm-3"><label>Season</label><input type="text" class="form-control" formControlName="season"></div>
-        <div class="col-sm-3"><label>Episode</label><input type="text" class="form-control" formControlName="episode"></div>
+        <div class="col-sm-2"><label>Series ID</label><input type="text" class="form-control" formControlName="sid"></div>
       </div>
       <div class="form-group">
-          <label class="col-sm-12" for="TextArea">Description</label>
-          <div class="col-sm-6"><textarea class="form-control"  formControlName="textarea"></textarea></div>
+          <label class="col-sm-12">Description</label>
+          <div class="col-sm-6"><textarea class="form-control"  formControlName="description"></textarea></div>
         </div>
       <div class="form-group">
         <div class="col-sm-6">

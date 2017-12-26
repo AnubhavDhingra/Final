@@ -4,12 +4,13 @@ var Episode = require('./episode');
 var Schema = mongoose.Schema;
 
 var seasonSchema = new Schema({
-    seriesName: { type:String },
-    seasonNumber: { type:Number},
+    sid: {type: String},
+    seasonNumber: {type:Number},
+    seasonName: {type:String},    
     description: {type: String},
-    _url: {type:String},
-    series: [{type: Schema.Types.ObjectId, ref: 'Series'}],
-    episodes: [{type: Schema.Types.ObjectId, ref: 'Episode'}]
+    created_at: { type: Date, default: Date.now() }
+    // series: [{type: Schema.Types.ObjectId, ref: 'Series'}],
+    // episodes: [{type: Schema.Types.ObjectId, ref: 'Episode'}]
 });
 
 module.exports = mongoose.model('Season',seasonSchema);

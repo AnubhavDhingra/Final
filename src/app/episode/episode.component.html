@@ -1,0 +1,42 @@
+<div class="container list">    
+  <div class="row">
+    <div class="col-sm-3 " *ngFor="let e of episode">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{e.episodeName}}</div>
+        
+        <div class="panel-body"><img src="" class="img-responsive" style="width:250px;height:350px" ></div>
+        <div class="panel-footer">{{e.episodeNumber}}</div>
+        <div *ngIf="adminlogin()">
+            <button class="btn btn-info" data-toggle="modal" data-target="#myModal" >Update</button> 
+            <button class="btn btn-info" (click)="deleteEpisode(e._id)">Delete</button>  
+        </div>
+      </div><br>
+    </div>
+</div>
+</div>
+
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>

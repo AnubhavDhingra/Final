@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+// let verifyToken = require('../middlewares/verifyToken');
 
 var userController = require('../controllers/controller');
 
@@ -11,7 +12,7 @@ router.route('/userLogin')
 .post(userController.loginUser);
 
 router.route('/movies')
-.get(userController.getMovie)
+.get(userController.verifyLogin,userController.getMovie)
 .post(userController.postMovie);
 
 router.route('/movies/:id')
@@ -19,14 +20,31 @@ router.route('/movies/:id')
 .delete(userController.deleteMovie);
 
 router.route('/series')
-.get(userController.getSeries)
+.get(userController.verifyLogin,userController.getSeries)
 .post(userController.postSeries);
 
-router.route('/series/:id')
-.delete(userController.deleteSeries);
+router.route('/series/:sid')
+.delete(userController.deleteSeries)
+.put(userController.updateSeries);
 
-// router.route('/seriesdelete')
-// .delete(userController.deleteSeries);
+router.route('/seasons')
+.post(userController.postSeason);
 
+router.route('/seasons/:sid/:seasonNumber')
+.put(userController.updateSeasons)
+.delete(userController.deleteSeason);
+
+router.route('/seasons/:sid')
+.get(userController.getSeason);
+
+router.route('/episodes')
+.post(userController.postEpisode);
+
+router.route('/episodes/:sid/:seasonNumber')
+.get(userController.getEpisode);
+
+router.route('/episodes/:id')
+.put(userController.updateEpisode)
+.delete(userController.deleteEpisode);
 
 module.exports = router;
